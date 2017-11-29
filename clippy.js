@@ -175,9 +175,18 @@ clippy.Agent.prototype = {
      *
      * @param {String} text
      */
-    ask:function (text, choices, callback) {
+
+    //(intro, text1, callback1, text2, callback2, ...)
+    ask:function () {
+
+        var args = [];
+        for (var i = 0; i < arguments.length; ++i) args[i] = arguments[i];
+        
+
+
+
         this._addToQueue(function (complete) {
-            this._balloon.ask(complete, text, choices, callback);
+            this._balloon.ask(complete, args);
         }, this);
     },
 
@@ -822,13 +831,32 @@ function_name(intro, text1, callback1, text2, callback2, ...)
         var args = [];
         for (var i = 0; i < arguments.length; ++i) args[i] = arguments[i];
         //console.log(args);
-        var a = args[0];
+        var complete = args[0];
         //console.log(a);
         args.shift();
-        //console.log(args);
+        //console.log('--------------------');
+        console.log(args[0]);
+        big_array = args[0]
+        console.log('--------------------');
+        console.log(big_array[0]);
 
+        var a = big_array, b = [];
 
-
+        for(var i = a.length-1; i >= 0; i--) {
+        if(i % 2 === 1) {
+            b.unshift(a.splice(i, 1)[0])
+        }
+        }
+/* 
+ok so now 
+a has names
+b has callback functions
+/----------------------\
+|    a     |     b     |
++----------------------+
+|   exit   |   exit()  |
+\----------------------/
+*/
 
         var choices = [];
         for (var i = 0; i < choiceTexts.length; i++) {
