@@ -922,12 +922,12 @@ clippy.Balloon.prototype = {
 clippy.BASE_PATH = 'agents/';
 
 clippy.load = function (name, successCb, failCb, path) {
-    console.log(path);
+    //console.log(path);
     //path = path + name || clippy.BASE_PATH + name;
     path = clippy.BASE_PATH + name;
-    console.log(path);
-    console.log(clippy.BASE_PATH);
-    console.log(name);
+    //console.log(path);
+    //console.log(clippy.BASE_PATH);
+    //console.log(name);
 
     var mapDfd = clippy.load._loadMap(path);
     var agentDfd = clippy.load._loadAgent(name, path);
