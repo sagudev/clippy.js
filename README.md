@@ -73,3 +73,4 @@ the program we used to unpack Clippy and his friends!
 
 # Development
 
+https://rawgit.com/sagudev/clippy.js/master/indox.html
