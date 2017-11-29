@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<title>clipy demo</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<!-- Clippy.js -->
+<link rel="stylesheet" type="text/css" href="clippy.css" media="all">
+<script src="clippy.js"></script>
 </head>
 <body>
 
 <h1>This is a Heading</h1>
 <p>This is a paragraph.</p>
-
+<script type="text/javascript">
+    clippy.load('Merlin', function(agent){
+        // do anything with the loaded agent
+        agent.show();
+    });
+</script>
 </body>
 </html> 
