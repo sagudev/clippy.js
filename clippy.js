@@ -923,7 +923,8 @@ clippy.BASE_PATH = 'agents/';
 
 clippy.load = function (name, successCb, failCb, path) {
     console.log(path);
-    path = path + name || clippy.BASE_PATH + name;
+    //path = path + name || clippy.BASE_PATH + name;
+    path = name;
     console.log(path);
     console.log(clippy.BASE_PATH);
     console.log(name);
