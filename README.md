@@ -73,10 +73,3 @@ the program we used to unpack Clippy and his friends!
 
 # Development
 
-## Compilation
-
-```
-    npm install
-    npm install -g gulp
-    gulp
-```
