@@ -865,27 +865,48 @@ b has callback functions
 |   exit   |   exit()  |
 \----------------------/
 */
-        console.log(a);
-        console.log(b);
+        //console.log(a);
+        //console.log(b);
+        //console.log(a.length);
         var choices = [];
-        for (var i = 0; i < choiceTexts.length; i++) {
-			 d = $('<a class="clippy-choice"></a>').text(choiceTexts[i])
-           choices.push(d);
-		}
+
+        /* 
         
+        var abcElements = document.querySelectorAll('.abc');
+
+        // Set their ids
+        for (var i = 0; i < abcElements.length; i++)
+            abcElements[i].id = 'abc-' + i;
+        
+        */
+        for (var i = 0; i < a.length; i++) {
+
+            //console.log(a[i])
+			d = $('<a class="clippy-choice" ></a>').text(a[i]).attr("id",i);
+            choices.push(d);
+        }
+     
+        
+
+
         this._hidden = false;
         this.show();
         var c = this._content;
         c.height('auto');
         c.width('auto');
         c.text(text);
+        //console.log(choices);
+        //console.log('--------------------------');
         for (var i in choices) {
             c.append(choices[i]);
+            //console.log(choices[i]);
         }
+        
         c.height(c.height());
         c.width(c.width());
         c.text('');
         this.reposition();
+        var callback = b;
 
         this._complete = complete;
         this._sayWords(text, choices, true, complete, callback, true);
@@ -901,6 +922,7 @@ b has callback functions
     },
 // ------------------------------------------------
     _sayWords:function (text, choices, hold, complete, callback, isQuestion) {
+        console.log(arguments);
         this._active = true;
         this._hold = hold;
         var words = text.split(/[^\S-]/);
@@ -922,9 +944,13 @@ b has callback functions
                 var self = this;
                 $(".clippy-choice").click(function() {
                     self.close(true);
-                    if (callback) {
-                        callback($(this).text());
-                    }
+                    //if (callback) {
+                    //    callback($(this).text());
+                    //console.log(callback);
+                    //console.log(this.id);
+                    console.log(callback[this.id]);
+                    eval(callback[this.id])
+                    //}
                 });
                 if (!isQuestion && callback) {
                     callback();
