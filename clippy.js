@@ -949,7 +949,7 @@ b has callback functions
                     //    callback($(this).text());
                     //console.log(callback);
                     //console.log(this.id);
-                    console.log(callback[this.id]);
+                    //console.log(callback[this.id]);
                     eval(callback[this.id])
                     //}
                 });

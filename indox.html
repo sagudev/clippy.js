@@ -15,12 +15,23 @@
     clippy.load('Merlin', function(agent){
         // do anything with the loaded agent
         agent.show();
-        agent.ask('samo', '123', 'samo()', 'hi', 'null');
+        agent.ask('samo', 'hi', 'samo()', 'hi', 'null');
+
+    });
+    clippy.load('Clippy', function(agent){
+        // do anything with the loaded agent
+        agent.show();
+        agent.ask('sam', 'ho', 'sami()', 'hi', 'null');
 
     });
 function samo() {
 
     alert('hi')
+
+}
+function sami() {
+
+    alert('ho')
 
 }
 </script>
