@@ -818,9 +818,13 @@ ask:function (complete, text, choiceTexts, callback) {
 
 
 new args
-function_name(intro, text1, callback1, text2, callback2, ...)
+ask(intro, text1, callback1, text2, callback2, ...)
 
 
+
+
+this one
+ask(complete, intro, text1, callback1, text2, callback2, ...)
 
 
 
@@ -832,6 +836,9 @@ function_name(intro, text1, callback1, text2, callback2, ...)
         for (var i = 0; i < arguments.length; ++i) args[i] = arguments[i];
         //console.log(args);
         var complete = args[0];
+        //console.log(a);
+        args.shift();
+        var text = args[0];
         //console.log(a);
         args.shift();
         //console.log('--------------------');
