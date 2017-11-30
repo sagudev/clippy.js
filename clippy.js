@@ -832,24 +832,23 @@ ask(complete, intro, text1, callback1, text2, callback2, ...)
  */
 
     ask:function () {
-        console.log(arguments);
-        var argo = [];
-        for (var i = 0; i < arguments.length; ++i) argo[i] = arguments[i];
-        console.log(argo);
-        var complete = argo[0];
+        //console.log(arguments);
+        var argo = arguments[1];
+        //for (var i = 0; i < arguments.length; ++i) argo[i] = arguments[i];
+        //console.log(argo);
+        var complete = arguments[0];
         //console.log(argo);
         //console.log(complete);
-        argo.shift();
+        //argo.shift();
+        //var text = argo[0];
         var text = argo[0];
-        
+        //console.log(argo[0]);
         argo.shift();
-        console.log('--------------------');
-        console.log(argo[0]);
-        big_array = argo[0];
-        console.log('--------------------');
-        console.log(big_array[0]);
+        //console.log('--------------------');
+        //console.log(argo[0]);
 
-        var a = big_array, b = [];
+
+        var a = argo, b = [];
 
         for(var i = a.length-1; i >= 0; i--) {
         if(i % 2 === 1) {
@@ -866,7 +865,8 @@ b has callback functions
 |   exit   |   exit()  |
 \----------------------/
 */
-
+        console.log(a);
+        console.log(b);
         var choices = [];
         for (var i = 0; i < choiceTexts.length; i++) {
 			 d = $('<a class="clippy-choice"></a>').text(choiceTexts[i])
