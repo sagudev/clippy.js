@@ -182,10 +182,11 @@ clippy.Agent.prototype = {
         var args = [];
         for (var i = 0; i < arguments.length; ++i) args[i] = arguments[i];
         
-
+        
 
 
         this._addToQueue(function (complete) {
+            //console.log(args);
             this._balloon.ask(complete, args);
         }, this);
     },
@@ -831,19 +832,20 @@ ask(complete, intro, text1, callback1, text2, callback2, ...)
  */
 
     ask:function () {
-
-        var args = [];
-        for (var i = 0; i < arguments.length; ++i) args[i] = arguments[i];
-        //console.log(args);
-        var complete = args[0];
-        //console.log(a);
-        args.shift();
-        var text = args[0];
-        //console.log(a);
-        args.shift();
-        //console.log('--------------------');
-        console.log(args[0]);
-        big_array = args[0]
+        console.log(arguments);
+        var argo = [];
+        for (var i = 0; i < arguments.length; ++i) argo[i] = arguments[i];
+        console.log(argo);
+        var complete = argo[0];
+        //console.log(argo);
+        //console.log(complete);
+        argo.shift();
+        var text = argo[0];
+        
+        argo.shift();
+        console.log('--------------------');
+        console.log(argo[0]);
+        big_array = argo[0];
         console.log('--------------------');
         console.log(big_array[0]);
 
