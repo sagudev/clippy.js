@@ -921,12 +921,13 @@ b has callback functions
         this._balloon.hide();
     },
 // ------------------------------------------------
-    _sayWords:function (text, choices, hold, complete, callback, isQuestion) {
+    _sayWords:function (text, choices, hold, complete, callback, isQuestion, time = this.WORD_SPEAK_TIME) {
         console.log(arguments);
         this._active = true;
         this._hold = hold;
         var words = text.split(/[^\S-]/);
-        var time = this.WORD_SPEAK_TIME;
+        //var time = this.WORD_SPEAK_TIME;
+        //time = typeof time !== 'undefined' ? time : WORD_SPEAK_TIME;
         var el = this._content;
         var idx = 1;
 
