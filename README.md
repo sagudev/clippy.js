@@ -1,4 +1,4 @@
-[Clippy.JS](http://smore.com/clippy-js) original
+THIS IS DEAD REPO. PLEASE USE THIS: https://github.com/sagudev/clippyjs
 =========
 demo:
 -----------
